@@ -25,7 +25,7 @@ U.Cookies = function( window, undefined ) {
 			String value
 			Integer days
 		
-		Returns nothing
+		Returns boolean
 	*/
 	function createCookie( name, value, days ) {
 		var expires;
@@ -81,7 +81,7 @@ U.Cookies = function( window, undefined ) {
 		Takes 1 parameter:
 			String name
 		
-		Returns nothing
+		Returns boolean
 	*/
 	function destroyCookie( name ) {
 		try {
@@ -120,6 +120,8 @@ U.Cookies = function( window, undefined ) {
 U.LocalStorage = function( window, undefined ) {
 	// check for localStorage in browser window
 	// null out our object if not present
+	var ls;
+
 	if ( window.localStorage === undefined ) {
 		U.log("localStorage is undefined");
 		U.LocalStorage = undefined;
